@@ -3,18 +3,27 @@
 ## Dependencies
 
 * Ruby 2.2
+<<<<<<< Updated upstream
+=======
+This project has been created using ruby 2.2.x You can download it using a package manager or the recommenced [rvm](https://rvm.io/)
+>>>>>>> Stashed changes
 
-After you have both installed then you can check de version by typing
+Once ruby is installed, you will need to run `gem install bundler` and then `bundle install`. This will install all the project dependencies listed in the Gemfile, including rails
+
+You can test your installation
 ```
 ruby -v
 ```
 
+<<<<<<< Updated upstream
 You can install the rest of the project dependencies defined in the Gemfile.rb by executing
 ```
 gem install bundler
 bundle install
 ```
 
+=======
+>>>>>>> Stashed changes
 ## Database initialization and seed
 
 First you need to run a rake comand to create the database and the tables
@@ -23,7 +32,7 @@ rake db:migrate
 ```
 This will create a development.sqlite3 and 3 tables (users, feedbacks, sessions). to create also the tables on the test environment you need to specify the environment ```rake db:migrate RAILS_ENV=test```.
 
-Currently there is no endpoint to create users and sessions so there is a script to create 15 users and 15 sessions also one user will create a random feedback for one of the sessions (15 feedbacks). To populate the table you can run
+Currently, there are no endpoints to create users and sessions. We provide a script to populate the database with 20 phony users and 20 phony sessions. Their unique identifiers (id) range from 1 to 20 *in both tables*. Also, the script creates a random comment of user *x* to session *x*, where *x* is an id value (user *1* has feedback on session *1*, user *2* has feedback on session *2*, and so on). After the script is run, you therefore have 20 users, 20 sessions and 20 feedbacks.
 ```
 rake db:seed
 ```
@@ -69,7 +78,7 @@ There are two routes defined and you can see them with the following command `ra
     "rating": 4,
     "comment": "sample comment"
   }
-  ``` 
+  ```
 * Success response
   ```json
   {

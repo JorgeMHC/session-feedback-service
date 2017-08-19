@@ -8,7 +8,7 @@ RATINGS = [
   {rate: 5, feedback: 'Excelent'}
 ]
 
-(1..15).each do |index|
+(1..20).each do |index|
   session = Session.create(name: '#{number_to_human(index)} session')
   user = User.create(first_name: 'User-#{index}')
 
