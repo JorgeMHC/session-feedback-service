@@ -22,6 +22,9 @@ ActiveRecord::Schema.define(version: 20170817131251) do
     t.datetime "updated_at", null: false
   end
 
+  add_index "feedbacks", ["created_at"], name: "index_feedbacks_on_created_at"
+  add_index "feedbacks", ["user_id", "session_id"], name: "index_feedbacks_on_user_id_and_session_id"
+
   create_table "sessions", force: :cascade do |t|
     t.string   "name"
     t.string   "summary"
