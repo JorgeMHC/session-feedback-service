@@ -3,16 +3,15 @@
 ## Dependencies
 
 * Ruby 2.2
-* Rails 4.2
 
 After you have both installed then you can check de version by typing
 ```
 ruby -v
-rails -v
 ```
 
 You can install the rest of the project dependencies defined in the Gemfile.rb by executing
 ```
+gem install bundler
 bundle install
 ```
 
@@ -30,9 +29,8 @@ rake db:seed
 ```
 ### Database structure
 
-The migrations will create 3 tables as shown in the diagram
-
-> Insert uml design here
+The migrations will create 3 tables as shown in the diagram<br />
+![alt text](db/schema.png "Description goes here")
 
 The table feedbacks contains 2 indexes, one composite index on user_id and session_id and one unique index for created_at.
 
