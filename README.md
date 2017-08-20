@@ -38,7 +38,7 @@ The table feedbacks contains 3 indexes:
 
 ## How to run the tests
 
-For test I am using [Rspec](http://rspec.info/). All the unit tests are located in the spec folder on the root of the project matching project structure (models, controllers). You can run all tests with the following command.
+For test I am using [Rspec](http://rspec.info/). All the function/integration tests are located in the spec folder on the root of the project matching project structure (models, controllers). You can run all tests with the following command.
 ```
 rspec .
 ```
@@ -116,7 +116,8 @@ There are two routes defined and you can see them with the following command `ra
       ]
   }
   ```
-OR<br />
+OR
+
   **HTTP status code**: `404`
   ```json
   {
@@ -146,9 +147,9 @@ OR<br />
   ```
   **Example**
   ```
-  /feedbacks
-  /feedbacks/rating=1
-  /feedbacks/rating=1,2
+  /feedbacks Will provide the 15 latest feedbacks.
+  /feedbacks?rating=1 Will provide the 15 latest feedbacks with a rating of 1.
+  /feedbacks?rating=1,2 Will provide the 15 latest feedbacks with a rating of either 5 or 4
   ```
 * Success response<br />
   **HTTP status code**: `200`
