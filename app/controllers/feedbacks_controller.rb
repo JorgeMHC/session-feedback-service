@@ -7,7 +7,7 @@ class FeedbacksController < BaseController
     if !rating_filter.empty?
       feedbacks = Feedback.where(rating: rating_filter).order(created_at: :desc).limit(15)
     else
-      feedbacks = Feedback.order(created_at: :desc).last(15)
+      feedbacks = Feedback.order(created_at: :desc).limit(15)
     end
 
     render json: feedbacks, adapter: :json_api, status: :ok

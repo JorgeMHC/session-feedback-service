@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170817131251) do
+ActiveRecord::Schema.define(version: 20170820011747) do
 
   create_table "feedbacks", force: :cascade do |t|
     t.integer  "user_id"
@@ -23,6 +23,7 @@ ActiveRecord::Schema.define(version: 20170817131251) do
   end
 
   add_index "feedbacks", ["created_at"], name: "index_feedbacks_on_created_at"
+  add_index "feedbacks", ["rating", "created_at"], name: "index_feedbacks_on_rating_and_created_at"
   add_index "feedbacks", ["user_id", "session_id"], name: "index_feedbacks_on_user_id_and_session_id"
 
   create_table "sessions", force: :cascade do |t|
