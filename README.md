@@ -3,6 +3,7 @@
 ## Dependencies
 
 * Ruby 2.2
+
 This project has been created using ruby 2.2.x You can download it using a package manager or the recommenced [rvm](https://rvm.io/)
 
 Once ruby is installed, you will need to run `gem install bundler` and then `bundle install`. This will install all the project dependencies listed in the Gemfile, including rails
@@ -30,7 +31,10 @@ rake db:seed
 The migrations will create 3 tables as shown in the diagram<br />
 ![alt text](db/schema.png "Description goes here")
 
-The table feedbacks contains 2 indexes, one composite index on user_id and session_id and one unique index for created_at.
+The table feedbacks contains 3 indexes:
+  * Composite index on user_id and session_id.
+  * Composite index on rating and created_at.
+  * Unique index for created_at.
 
 ## How to run the tests
 
