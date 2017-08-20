@@ -1,4 +1,5 @@
 RSpec.configure do |config|
+  # This will run after every test to delete records in the test_db
   config.before(:each) do
     DatabaseCleaner[:active_record].strategy = :truncation, { pre_count: true }
   end
