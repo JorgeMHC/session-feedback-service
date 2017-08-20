@@ -1,8 +1,9 @@
 describe Feedback do
   it { expect(subject).to belong_to(:user) }
   it { expect(subject).to belong_to(:session) }
+  it { should validate_presence_of(:rating) }
 
-  # It test that the feedback can just have one user per session
+  # It tests that the feedback can just have one user per session
   it { should validate_uniqueness_of(:user_id).scoped_to(:session_id).with_message(/can just leave one feeback per session/)  }
 
   it 'should not be valid if rating is out of the range 1 to 5' do
