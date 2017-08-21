@@ -8,12 +8,19 @@ RATINGS = [
   {rate: 5, feedback: 'Excelent'}
 ]
 
-(1..20).each do |index|
-  session = Session.create(name: '#{number_to_human(index)} session')
-  user = User.create(first_name: 'User-#{index}')
+if Rails.env.production?
+  (1..500).each do |index|
+    session = Session.create(name: '#{number_to_human(index)} session')
+    user = User.create(first_name: 'User-#{index}')
+  end
+else
+  (1..20).each do |index|
+    session = Session.create(name: '#{number_to_human(index)} session')
+    user = User.create(first_name: 'User-#{index}')
 
-  rand_num = rand(5) + 1
-  feed = RATINGS.select { |rating| rating[:rate] == rand_num}.first
+    rand_num = rand(5) + 1
+    feed = RATINGS.select { |rating| rating[:rate] == rand_num}.first
 
-  Feedback.create(rating: feed[:rate], comment: feed[:feedback], user: user, session: session)
+    Feedback.create(rating: feed[:rate], comment: feed[:feedback], user: user, session: session)
+  end
 end
