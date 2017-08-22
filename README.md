@@ -6,7 +6,8 @@
 
 This project has been created using ruby 2.2.x You can download it using a package manager or the recommenced [rvm](https://rvm.io/)
 
-Once ruby is installed, you will need to run `gem install bundler` and then `bundle install`. This will install all the project dependencies listed in the Gemfile, including rails
+Once ruby is installed, you will need to run `gem install bundler` and then `bundle install --without production`. This will install all the project dependencies listed in the Gemfile, including rails. <br />
+The `--without production` command will actually not install the production dependencies in your local machine. In this case PostgreSQL. This will just be needed in production.
 
 You can test your installation
 ```
