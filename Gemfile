@@ -5,6 +5,7 @@ gem 'active_model_serializers'
 gem 'rails', '4.2.8'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.0'
+gem 'codacy-coverage', :require => false
 
 group :development, :test do
   gem 'sqlite3'
